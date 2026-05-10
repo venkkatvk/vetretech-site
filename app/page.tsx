@@ -1,4 +1,7 @@
+'use client';
+
 import React, { useState } from 'react';
+
 import {
   BrainCircuit,
   Users,
@@ -159,7 +162,7 @@ const Services = () => {
 const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // In a real Next.js environment, this would call an API route. 
     // Here we simulate the intent to mailto:hello@vetretech.com
