@@ -331,9 +331,7 @@ export default function App() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="rounded-3xl bg-slate-50 border border-slate-100 p-8 sm:p-16 text-center">
               <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Our Story</h2>
-              <p className="mt-4 text-lg text-slate-500 max-w-2xl mx-auto italic">
-                At <span className="text-indigo-600">VetreTech</span>, we were born from a simple observation: the skills that make a great veteran – adaptability, resilience, and technical aptitude – are often undervalued in the civilian job market. We bridge this gap by empowering organizations with high-caliber technical talent while providing veterans with the clear, structured career paths they deserve. We believe that every veteran possesses the drive to excel; we simply help them find the right battlefield.
-              </p>
+              <p className="mt-4 text-lg text-slate-500 max-w-2xl mx-auto italic"></p>
             </div>
           </div>
         </section>
