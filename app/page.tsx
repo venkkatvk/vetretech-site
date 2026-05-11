@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import {
   BrainCircuit,
@@ -320,58 +320,6 @@ const Footer = () => {
 
 // --- MAIN APP COMPONENT ---
 export default function App() {
-  useEffect(() => {
-    // #region agent log (H1/H2/H3/H4) landing page audit
-    const runId = 'pre-fix';
-    const now = Date.now();
-    const post = (hypothesisId: string, location: string, message: string, data: Record<string, unknown>) =>
-      fetch('http://127.0.0.1:7370/ingest/efca4e4b-cf67-467f-9fbe-cd4dd1be3b39', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': 'f10dab' },
-        body: JSON.stringify({ sessionId: 'f10dab', runId, hypothesisId, location, message, data, timestamp: Date.now() }),
-      }).catch(() => {});
-
-    const htmlText = document.body?.innerText ?? '';
-    const placeholders = Array.from(htmlText.matchAll(/\[[^\]]+\]/g)).slice(0, 25).map((m) => m[0]);
-    post('H1', 'app/page.tsx:App.useEffect', 'Bracketed placeholders detected in rendered text', {
-      count: placeholders.length,
-      samples: placeholders,
-      collectedAt: now,
-    });
-
-    const mailtos = Array.from(document.querySelectorAll('a[href^="mailto:"]')).map((a) => {
-      const href = (a as HTMLAnchorElement).getAttribute('href') ?? '';
-      return {
-        href,
-        hasWhitespace: /\s/.test(href),
-        hasSubjectParam: /[?&]subject=/.test(href),
-        hasUnencodedSpaces: /subject=[^&]*\s/.test(href) || /body=[^&]*\s/.test(href),
-      };
-    });
-    post('H2', 'app/page.tsx:App.useEffect', 'mailto links audit', {
-      count: mailtos.length,
-      mailtos,
-    });
-
-    const about = document.getElementById('about');
-    const services = document.getElementById('services');
-    const aboutHeading = about?.querySelector('h1,h2,h3')?.textContent?.trim() ?? null;
-    const servicesHeading = services?.querySelector('h1,h2,h3')?.textContent?.trim() ?? null;
-    post('H3', 'app/page.tsx:App.useEffect', 'Section anchors and headings audit', {
-      hasAbout: Boolean(about),
-      hasServices: Boolean(services),
-      aboutHeading,
-      servicesHeading,
-    });
-
-    const metaDesc = document.querySelector('meta[name="description"]')?.getAttribute('content') ?? null;
-    post('H4', 'app/page.tsx:App.useEffect', 'Document title + meta description', {
-      title: document.title,
-      metaDescription: metaDesc,
-    });
-    // #endregion agent log (H1/H2/H3/H4) landing page audit
-  }, []);
-
   return (
     <div className="min-h-screen bg-white font-sans selection:bg-indigo-200 selection:text-indigo-900">
       <Header />
