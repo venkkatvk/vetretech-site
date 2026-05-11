@@ -1,0 +1,7 @@
+{
+  "github": {
+    "silent": true,
+    "deploymentPrerelease": true
+  },
+  "alias": ["vetretech.com", "www.vetretech.com"]
+}
