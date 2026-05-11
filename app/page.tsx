@@ -167,7 +167,7 @@ const Contact = () => {
     // In a real Next.js environment, this would call an API route. 
     // Here we simulate the intent to mailto:[EMAIL_ADDRESS]
     setIsSubmitted(true);
-    window.location.href = "mailto:[EMAIL_ADDRESS]?subject=New Inquiry from VetreTech Website";
+    window.location.href = "mailto:hello@vetretech.com?subject=New Inquiry from VetreTech Website";
   };
 
   return (
