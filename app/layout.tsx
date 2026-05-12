@@ -11,7 +11,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
+// Replace the old metadata with this tailored version
 export const metadata: Metadata = {
   title: "Vetre TechSolutions | AI, Talent, and SaaS Delivery",
   description: "Empowering enterprise leadership with AI adoption strategy, technical recruitment, and full-cycle SaaS engineering.",
