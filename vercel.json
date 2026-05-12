@@ -4,6 +4,7 @@
     "silent": true,
     "deploymentPrerelease": true
   },
+<<<<<<< HEAD
   "alias": ["vetretech.com", "www.vetretech.com"]
 <<<<<<< HEAD
 }
@@ -94,3 +95,6 @@ Commands:
   ds:status [options] <operation> [jobid]                    Display the job status of a Data Store import or export operation    
   help [command]                                             Display help information
 >>>>>>> 91bb8d5 (cataylst)
+=======
+  "alias": ["vetretech.com", "www.vetretech.com"
+>>>>>>> d50dc833f7d948fb3b663f24f1f70341d9030a13
