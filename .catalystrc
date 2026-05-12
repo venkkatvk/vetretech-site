@@ -1,0 +1,37 @@
+
+  "defaults": {
+    "project": 1,
+    "env": 1
+  },
+  "actives": {
+    "project": 1,
+    "env": 1
+  },
+  "projects": [
+    {
+      "idx": 1,
+      "id": "39806000000013093",
+      "name": "vetretech-site",
+      "domain": {
+        "id": "50042131327",
+        "name": "vetretech-site-60071562385.development"
+      },
+      "timezone": "Asia/Kolkata",
+      "env": [
+        {
+          "idx": 1,
+          "id": "60071562385",
+          "name": "Development",
+          "type": 3
+        }
+        {
+  "hosting": {
+    "public": {
+      "source": "out" 
+    }
+  }
+}
+      ]
+    }
+  ]
+}

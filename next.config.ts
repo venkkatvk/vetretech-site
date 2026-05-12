@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'export', // CRITICAL: This generates the 'out' folder
+  images: {
+    unoptimized: true, // Necessary for static hosting
+  },
 };
 
 export default nextConfig;
